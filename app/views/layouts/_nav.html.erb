@@ -1,13 +1,23 @@
-<nav class="clearfix white bg-black">
-  <div class="sm-col">
-    <a href="/" class="btn py2">Home</a>
-    <a href="/dashboard" class="btn py2">Dashboard</a>
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <p class="navbar-item" >
+     Dark Hub
+    </p>
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
   </div>
-  <div class="sm-col-right">
-    <% if  current_user %>
-      <a href="session/destroy" class="btn py2">Log Out</a>
+  <div class="navbar-start">
+    <a class="navbar-item" href="/" class="btn py2">Home</a>
+    <a class="navbar-item" href="/dashboard" class="btn py2">Dashboard</a>
+  </div>
+  <div class="navbar-end">
+     <% if  current_user %>
+      <a class="navbar-item" href="session/destroy" class="btn py2">Log Out</a>
     <% else %>
-      <a href="auth/github" class="btn py2">Login with Github</a>
+      <a class="navbar-item" href="auth/github" class="btn py2">Login with Github</a>
     <% end %>
   </div>
 </nav>

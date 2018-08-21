@@ -1,4 +1,15 @@
-<header class="center px3 py4 white bg-black bg-cover bg-center">
-  <h1 class="h1 h0-responsive caps mt4 mb0 regular">Dark Hub</h1>
-  <p class="h3">Welcome <%= link_to  "Login with GitHub", github_auth_path %> to view your GitHub but darker.</p>
-</header>
+<section class="hero is-dark is-fullheight is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Dark Hub
+      </h1>
+      <h2 class="subtitle">
+        Welcome to your GitHub profile but darker.
+      </h2>
+      <h2 class="subtitle">
+        <%= link_to  "Login with GitHub", github_auth_path, class: "button is-link" %> 
+      </h2>
+    </div>
+  </div>
+</section>
