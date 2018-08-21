@@ -44,13 +44,21 @@ gem "bulma-rails", "~> 0.7.1"
 
 group :development, :test do
   gem 'pry'
+  gem 'rspec-rails'
+  gem 'simplecov', require: false, group: :test
+  gem 'nyan-cat-formatter'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
+  gem 'launchy'
+  gem 'capybara'
+  gem 'webmock'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'rspec-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
