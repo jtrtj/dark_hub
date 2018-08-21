@@ -1,11 +1,10 @@
 <nav class="clearfix white bg-black">
   <div class="sm-col">
     <a href="/" class="btn py2">Home</a>
-    <a href="/" class="btn py2">Burgers</a>
-    <a href="/" class="btn py2">Fries</a>
+    <a href="/dashboard" class="btn py2">Dashboard</a>
   </div>
   <div class="sm-col-right">
-    <% if  @current_user %>
+    <% if  current_user %>
       <a href="session/destroy" class="btn py2">Log Out</a>
     <% else %>
       <a href="auth/github" class="btn py2">Login with Github</a>

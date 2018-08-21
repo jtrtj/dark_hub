@@ -39,7 +39,7 @@ gem 'omniauth-github'
 gem 'faraday'
 
 #stylez
-gem 'basscss-rails'
+gem "bulma-rails", "~> 0.7.1"
 
 
 group :development, :test do
