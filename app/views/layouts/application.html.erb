@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>DarkHub</title>
+    <link href="https://unpkg.com/basscss@7.1.1/css/basscss.min.css" rel="stylesheet">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -9,6 +10,7 @@
   </head>
 
   <body>
+    <%= render partial: "layouts/nav" %>
     <%= yield %>
   </body>
 </html>
