@@ -16,7 +16,7 @@
               <br>
               <%= @git_hub_user.following %> following
             </p>
-            <table class="table">
+            <table class="table repos">
               <thead>
                 <th>Name</th>
                 <th>Description</th>
@@ -24,9 +24,9 @@
               <tbody>
                 <% @git_hub_user_repos.each do |user_repo| %>
                 <tr>
-                  <td><%= user_repo.name %></td>
-                  <td><%= user_repo.description %></td>
-                  <td><%= link_to  "View on GitHub", "#{user_repo.html_url}" %></td>
+                  <td class="repo-name"><%= user_repo.name %></td>
+                  <td class="repo-description"><%= user_repo.description %></td>
+                  <td class="repo-link"><%= link_to  "View on GitHub", "#{user_repo.html_url}" %></td>
                 </tr>
                 <% end %>
               </tbody>
