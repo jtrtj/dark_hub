@@ -12,12 +12,11 @@ feature 'registered user visits their dashboard' do
    
     visit '/dashboard'
     expect(current_path).to eq('/dashboard')
-
     expect(page).to have_content(user.name)
     expect(page).to have_css('.avatar')
     expect(page).to have_content('# Starred Repos')
-    expect(page).to have_content('# followers')
-    expect(page).to have_content('# following')
+    expect(page).to have_content('3 followers')
+    expect(page).to have_content('6 following')
   end
 end
 
