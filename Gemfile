@@ -44,6 +44,15 @@ gem "bulma-rails", "~> 0.7.1"
 
 group :development, :test do
   gem 'pry'
+  gem 'rspec-rails'
+  gem 'simplecov', require: false, group: :test
+  gem 'nyan-cat-formatter'
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
+  gem 'launchy'
+  gem 'capybara'
+  gem 'webmock'
 end
 
 group :development do
