@@ -6,6 +6,8 @@ class GitHubService
   def self.user_repos(token, user_name)
     conn(token).get("users/#{user_name}/repos")
   end
+  
+  private
 
   def self.conn(token)
     Faraday.new(:url => "https://api.github.com/") do |faraday|
