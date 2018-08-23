@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/user
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - token <GITHUB_TOKEN>
+      User-Agent:
+      - Faraday v0.15.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Thu, 23 Aug 2018 18:58:14 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4989'
+      X-Ratelimit-Reset:
+      - '1535053061'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      Etag:
+      - W/"9b6652413b272e2e7283f637c3c11b68"
+      Last-Modified:
+      - Tue, 21 Aug 2018 17:50:34 GMT
+      X-Oauth-Scopes:
+      - repo, user
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Runtime-Rack:
+      - '0.062745'
+      X-Github-Request-Id:
+      - ECC3:4ACE:36BE86:881FA8:5B7F03C6
+    body:
+      encoding: ASCII-8BIT
+      string: '{"login":"jtrtj","id":31391433,"node_id":"MDQ6VXNlcjMxMzkxNDMz","avatar_url":"https://avatars3.githubusercontent.com/u/31391433?v=4","gravatar_id":"","url":"https://api.github.com/users/jtrtj","html_url":"https://github.com/jtrtj","followers_url":"https://api.github.com/users/jtrtj/followers","following_url":"https://api.github.com/users/jtrtj/following{/other_user}","gists_url":"https://api.github.com/users/jtrtj/gists{/gist_id}","starred_url":"https://api.github.com/users/jtrtj/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/jtrtj/subscriptions","organizations_url":"https://api.github.com/users/jtrtj/orgs","repos_url":"https://api.github.com/users/jtrtj/repos","events_url":"https://api.github.com/users/jtrtj/events{/privacy}","received_events_url":"https://api.github.com/users/jtrtj/received_events","type":"User","site_admin":false,"name":"John
+        Roemer","company":null,"blog":"","location":"Denver, CO","email":null,"hireable":null,"bio":null,"public_repos":38,"public_gists":0,"followers":4,"following":6,"created_at":"2017-08-27T19:18:21Z","updated_at":"2018-08-21T17:50:34Z","private_gists":11,"total_private_repos":0,"owned_private_repos":0,"disk_usage":20509,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":0}}'
+    http_version: 
+  recorded_at: Thu, 23 Aug 2018 18:58:14 GMT
+recorded_with: VCR 4.0.0

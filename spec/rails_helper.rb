@@ -18,6 +18,8 @@ require 'rspec/rails'
 VCR.configure do |config|
   config.cassette_library_dir = "fixtures/vcr_cassettes"
   config.hook_into :webmock
+  config.filter_sensitive_data("<GITHUB_TOKEN>") { ENV['jtrtj_test_token'] }
+  config.configure_rspec_metadata!
 end
 
 # Add additional requires below this line. Rails is not loaded until this point!
