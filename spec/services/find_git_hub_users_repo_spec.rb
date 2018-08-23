@@ -10,6 +10,7 @@ describe FindGitHubUserRepos do
       repo = repos.first
 
       expect(repos.class).to be(Array)
+      expect(repo.class).to be(GitHubUserRepo)
       expect(repo.name.class).to be(String)
       expect(repo.description.class).to be(String).or be(NilClass) #if no desc. JSON parse makes a nil object
       expect(repo.html_url.class).to be(String)

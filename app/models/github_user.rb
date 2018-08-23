@@ -19,4 +19,8 @@ class GithubUser < SimpleDelegator
   def repos
     @repos ||= FindGitHubUserRepos.find(token, user_name)
   end
+
+  def commits
+    @commits ||= FindGitHubUserCommits.find(token, user_name)
+  end
 end
