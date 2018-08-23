@@ -19,6 +19,6 @@ class GitHubService
   end
 
   def self.parse_result_body(raw_json)
-    JSON.parse(raw_json.body)
+    JSON.parse(raw_json.body, symbolize_names: true)
   end
 end

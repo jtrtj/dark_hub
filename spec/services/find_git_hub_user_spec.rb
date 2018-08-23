@@ -8,6 +8,8 @@ describe FindGitHubUser do
       git_hub_user = FindGitHubUser.find(token)
 
       expect(git_hub_user.class).to be(GitHubUser)  
+      expect(git_hub_user.name.class).to be(String)  
+      expect(git_hub_user.avatar_url).to_not be_nil
     end
   end
 end

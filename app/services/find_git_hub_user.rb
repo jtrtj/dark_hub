@@ -1,5 +1,11 @@
 class FindGitHubUser
   def self.find(token)
-    GitHubUser.new(JSON.parse(GitHubService.user(token).body, symbolize_names: true))
+    GitHubUser.new(github_conn(token))
+  end
+
+  private
+
+  def self.github_conn(token)
+    GitHubService.user(token)
   end
 end
