@@ -25,7 +25,11 @@
                 <% @github_user.repos.each do |user_repo| %>
                 <tr>
                   <td class="repo-name"><%= user_repo.name %></td>
-                  <td class="repo-description"><%= user_repo.description %></td>
+                  <% if user_repo.description.nil? %>
+                    <td> No description </td>
+                  <% else %>
+                    <td class="repo-description"><%= user_repo.description %></td>
+                  <% end %>
                   <td class="repo-link"><%= link_to  "View on GitHub", "#{user_repo.html_url}" %></td>
                 </tr>
                 <% end %>

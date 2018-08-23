@@ -1,12 +1,14 @@
 class GitHubService
   def self.user(token)
-    conn(token).get("/user")
+    result = conn(token).get("/user")
+    parse_result_body(result)
   end
 
   def self.user_repos(token, user_name)
-    conn(token).get("users/#{user_name}/repos")
+    result = conn(token).get("users/#{user_name}/repos")
+    parse_result_body(result)
   end
-  
+
   private
 
   def self.conn(token)
@@ -14,5 +16,9 @@ class GitHubService
       faraday.headers["Authorization"] = "token #{token}"
       faraday.adapter Faraday.default_adapter
     end
+  end
+
+  def self.parse_result_body(raw_json)
+    JSON.parse(raw_json.body)
   end
 end
