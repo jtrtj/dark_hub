@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'registered user visits their dashboard' do
-  scenario 'they see their profile pic, number of starred repos, followers and following' do
+  scenario 'they see their profile pic, number of starred repos, followers and following', :vcr do
     user = User.create!(
                         provider: 'github',
                         uid: ENV['jtrtj_test_uid'],
@@ -20,7 +20,7 @@ feature 'registered user visits their dashboard' do
     expect(page).to have_content('6 following')
   end
 
-  scenario 'they see a list of all their repos' do
+  scenario 'they see a list of all their repos', :vcr do
     user = User.create!(
                         provider: 'github',
                         uid: ENV['jtrtj_test_uid'],
