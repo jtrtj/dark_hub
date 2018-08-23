@@ -9,10 +9,23 @@ class GitHubService
     parse_result_body(result)
   end
 
+  def self.user_commits(token, user_name)
+    result = search_conn(token).get("search/commits?q=author:#{user_name}")
+    parse_result_body(result)[:items]
+  end
+
   private
 
   def self.conn(token)
     Faraday.new(:url => "https://api.github.com/") do |faraday|
+      faraday.headers["Authorization"] = "token #{token}"
+      faraday.adapter Faraday.default_adapter
+    end
+  end
+
+  def self.search_conn(token)
+    Faraday.new(:url => "https://api.github.com/") do |faraday|
+      faraday.headers["Accept"] = "application/vnd.github.cloak-preview+json"
       faraday.headers["Authorization"] = "token #{token}"
       faraday.adapter Faraday.default_adapter
     end

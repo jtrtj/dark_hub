@@ -33,4 +33,22 @@ describe GitHubService do
       expect(repo[:html_url].class).to be(String)
     end
   end
+
+  context '.user_commits' do
+    it "can make a GitHub api search for commits by a user", :vcr do
+      token = ENV['jtrtj_test_token']
+      user_name = 'jtrtj'
+
+      result = GitHubService.user_commits(token, user_name)
+      commit = result.first
+     
+      expect(result.class).to be(Array)
+      expect(commit).to have_key(:repository)
+      # expect(repo).to have_key(:description)
+      # expect(repo).to have_key(:html_url)
+      # expect(repo[:name].class).to be(String)
+      # expect(repo[:description].class).to be(String).or be(NilClass) #if no desc. JSON parse makes a nil object
+      # expect(repo[:html_url].class).to be(String)
+    end
+  end
 end
