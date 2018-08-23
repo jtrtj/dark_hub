@@ -33,8 +33,8 @@ feature 'registered user visits their dashboard' do
 
     visit '/dashboard'
     
-    expect(page).to have_css('.repo_name')
-    expect(page).to have_css('.repo_description')
-    expect(page).to have_css('.repo_link')
+    expect(page).to have_css('.repos')
+    # expect(page).to have_css('.repo_description')
+    # expect(page).to have_css('.repo_link')
   end
 end

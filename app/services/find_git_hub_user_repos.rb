@@ -1,7 +1,6 @@
 class FindGitHubUserRepos
   def self.find(token, user_name)
-    results = GitHubService.user_repos(token, user_name)
-    make_repos(JSON.parse(results.body, symbolize_names: true))
+    make_repos(GitHubService.user_repos(token, user_name))
   end
 
   private
