@@ -35,6 +35,26 @@
                 <% end %>
               </tbody>
             </table>
+            <table class="table commits">
+              <thead>
+                <th>Message</th>
+                <th>Repo Name</th>
+                <th>Link</th>
+              </thead>
+              <tbody>
+                <% @github_user.commits.each do |user_commit| %>
+                <tr>
+                  <% if user_commit.message.nil? %>
+                    <td> No message </td>
+                  <% else %>
+                    <td class="commit-message"><%= user_commit.message %></td>
+                  <% end %>
+                  <td class="commit-repo-name"><%= user_commit.repo_name %></td>
+                  <td class="commit-link"><%= link_to  "View on GitHub", "#{user_commit.html_url}" %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
           </div>
           <nav class="level is-mobile">
             <div class="level-left">
