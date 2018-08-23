@@ -1,5 +1,6 @@
 class SessionController < ApplicationController
   skip_before_action :verify_authenticity_token
+
   def create
     user = User.find_or_create_by(provider: auth_hash[:provider], uid: auth_hash[:uid]) do |user|
       user.name = auth_hash[:info][:name]

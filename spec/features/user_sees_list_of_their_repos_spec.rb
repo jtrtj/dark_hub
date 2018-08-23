@@ -4,9 +4,10 @@ feature 'registered user visits their dashboard' do
   scenario 'they see their profile pic, number of starred repos, followers and following' do
     user = User.create!(
                         provider: 'github',
-                        uid: ENV['JTRTJ_TEST_UID'],
+                        uid: ENV['jtrtj_test_uid'],
                         name: 'John Roemer',
-                        token: ENV['JTRTJ_TEST_TOKEN']
+                        token: ENV['jtrtj_test_token'],
+                        user_name: 'jtrtj'
                       )
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
    
@@ -14,10 +15,26 @@ feature 'registered user visits their dashboard' do
     expect(current_path).to eq('/dashboard')
     expect(page).to have_content(user.name)
     expect(page).to have_css('.avatar')
-    expect(page).to have_content('# Starred Repos')
-    expect(page).to have_content('3 followers')
+    # expect(page).to have_content('# Starred Repos')
+    expect(page).to have_content('4 followers')
     expect(page).to have_content('6 following')
   end
-end
 
-#View basic information about my account (profile pic, number of starred repos, followers, following)
+  scenario 'they see a list of all their repos' do
+    user = User.create!(
+                        provider: 'github',
+                        uid: ENV['jtrtj_test_uid'],
+                        name: 'John Roemer',
+                        token: ENV['jtrtj_test_token'],
+                        user_name: 'jtrtj'
+                      )
+ 
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit '/dashboard'
+    
+    expect(page).to have_css('.repo_name')
+    expect(page).to have_css('.repo_description')
+    expect(page).to have_css('.repo_link')
+  end
+end
