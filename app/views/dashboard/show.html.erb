@@ -4,17 +4,17 @@
       <article class="media">
         <figure class="media-left">
           <p class="image is-64x64 avatar">
-            <%= image_tag  @git_hub_user.avatar_url, class: 'avatar' %>
+            <%= image_tag  @github_user.avatar_url, class: 'avatar' %>
           </p>
         </figure>
         <div class="media-content">
           <div class="content">
             <p>
-              <strong><%= @git_hub_user.name %></strong> <small>@johnsmith</small> <small>31m</small>
+              <strong><%= @github_user.name %></strong> <small>@johnsmith</small> <small>31m</small>
               <br>
-              <%= @git_hub_user.followers %> followers
+              <%= @github_user.followers %> followers
               <br>
-              <%= @git_hub_user.following %> following
+              <%= @github_user.following %> following
             </p>
             <table class="table repos">
               <thead>
@@ -22,7 +22,7 @@
                 <th>Description</th>
               </thead>
               <tbody>
-                <% @git_hub_user_repos.each do |user_repo| %>
+                <% @github_user.repos.each do |user_repo| %>
                 <tr>
                   <td class="repo-name"><%= user_repo.name %></td>
                   <td class="repo-description"><%= user_repo.description %></td>

@@ -41,6 +41,7 @@ gem 'faraday'
 #stylez
 gem "bulma-rails", "~> 0.7.1"
 
+gem 'figaro'
 
 group :development, :test do
   gem 'pry'
