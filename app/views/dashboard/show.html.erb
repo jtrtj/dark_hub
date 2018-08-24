@@ -25,8 +25,32 @@
                 <% @github_user.repos.each do |user_repo| %>
                 <tr>
                   <td class="repo-name"><%= user_repo.name %></td>
-                  <td class="repo-description"><%= user_repo.description %></td>
+                  <% if user_repo.description.nil? %>
+                    <td> No description </td>
+                  <% else %>
+                    <td class="repo-description"><%= user_repo.description %></td>
+                  <% end %>
                   <td class="repo-link"><%= link_to  "View on GitHub", "#{user_repo.html_url}" %></td>
+                </tr>
+                <% end %>
+              </tbody>
+            </table>
+            <table class="table commits">
+              <thead>
+                <th>Message</th>
+                <th>Repo Name</th>
+                <th>Link</th>
+              </thead>
+              <tbody>
+                <% @github_user.commits.each do |user_commit| %>
+                <tr>
+                  <% if user_commit.message.nil? %>
+                    <td> No message </td>
+                  <% else %>
+                    <td class="commit-message"><%= user_commit.message %></td>
+                  <% end %>
+                  <td class="commit-repo-name"><%= user_commit.repo_name %></td>
+                  <td class="commit-link"><%= link_to  "View on GitHub", "#{user_commit.html_url}" %></td>
                 </tr>
                 <% end %>
               </tbody>

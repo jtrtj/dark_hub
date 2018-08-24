@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'a user visiting root' do
-  scenario 'can log in using github credentials' do
+  scenario 'can log in using github credentials', :vcr do
     stub_omniauth
 
     visit root_path

@@ -3,7 +3,7 @@ class DashboardController < ApplicationController
 
   def show
     @github_user = GithubUser.new(current_user)
-
+    
       # in view -> @github_user.repos
       # @github_user.followers
 
