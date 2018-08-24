@@ -16,7 +16,7 @@ feature 'registered user visits their dashboard' do
     expect(page).to have_content(user.name)
     expect(page).to have_css('.avatar')
     # expect(page).to have_content('# Starred Repos')
-    expect(page).to have_content('4 followers')
+    expect(page).to have_content('5 followers')
     expect(page).to have_content('6 following')
   end
 

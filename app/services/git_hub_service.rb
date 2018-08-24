@@ -10,7 +10,7 @@ class GitHubService
   end
 
   def self.user_commits(token, user_name)
-    result = search_conn(token).get("search/commits?q=author:#{user_name}")
+    result = search_conn(token).get("search/commits?q=author:#{user_name}&sort=author-date")
     parse_result_body(result)[:items]
   end
 

@@ -7,7 +7,7 @@ describe GitHubUserCommit do
     commit = GitHubUserCommit.new(attributes)
 
     expect(commit.message).to eq(attributes[:commit][:message])
-    expect(commit.html_url).to eq(attributes[:commit][:html_url])
+    expect(commit.html_url).to eq(attributes[:html_url])
     expect(commit.repo_name).to eq(attributes[:repository][:name])
     expect(commit.repo_html_url).to eq(attributes[:repository][:html_url])
     expect(commit.date).to eq(attributes[:commit][:author][:date])
